@@ -11,7 +11,7 @@ int main(int argc, char** argv)
     {
         //min = a[i];
         int temp = a[i];
-        for(j = i; j < 7; j++)
+        for(j = i+1; j < 7; j++)
         {
             if(a[j] < temp)
             {
