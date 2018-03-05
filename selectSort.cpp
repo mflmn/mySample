@@ -10,15 +10,17 @@ int main(int argc, char** argv)
     for(int i = 0; i < 7; i++)
     {
         //min = a[i];
-        int temp = a[i];
+        //int temp = a[i];
+        min = i;
         for(int j = i+1; j < 7; j++)
         {
-            if(a[j] < temp)
+            if(a[j] < a[min])
             {
                 //temp = a[j];
                 min = j;
             }
         }
+        int temp = a[i];
         a[i] = a[min];
         a[min] = temp;
     }
