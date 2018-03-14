@@ -36,6 +36,26 @@ void B::show()
     cout << "in the B" << endl;
 }
 
+class Area
+{
+public:
+    int _len;
+    static Area *_instance;
+public:
+    Area();
+    static Area *getInstance();
+};
+
+Area* Area::getInstance()
+{
+    if(_instance == NULL)
+    {
+        _instance = new Area();
+        return _instance;
+    }
+    return _instance;
+}
+
 
 int main(int argc, char** argv)
 {
