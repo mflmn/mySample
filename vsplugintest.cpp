@@ -234,7 +234,7 @@ void shellSort(int a[])
                 }
             }
         }
-        if(gap == 0)
+        if (gap == 0)
         {
             break;
         }
@@ -248,6 +248,35 @@ void sortPrint(int a[], int num)
         cout << a[i] << ",";
     }
     cout << a[num - 1] << endl;
+}
+
+void heapSort(int a[])
+{
+    int length = 7;
+    for (int j = 0; j < 6; j++)
+    {
+        for (int i = length / 2 - 1; i >= 0; i--)
+        {
+            int large = i;
+            int left = 2 * i + 1;
+            int right = 2 * i + 2;
+            if (left < length && a[left] > a[large])
+            {
+                large = left;
+            }
+            if (right < length && a[right] > a[large])
+            {
+                large = right;
+            }
+            int temp = a[i];
+            a[i] = a[large];
+            a[large] = temp;
+        }
+        int secondTemp = a[0];
+        a[0] = a[length - 1];
+        a[length - 1] = secondTemp;
+        length--;
+    }
 }
 
 int main(int argc, char **argv)
@@ -269,6 +298,8 @@ int main(int argc, char **argv)
     // mergeSort(a, 0, 6);
     // selectSort(a);
     //insertSort(a);
-    shellSort(a);
+    //shellSort(a);
+    heapSort(a);
+    
     sortPrint(a, 7);
 }
